@@ -26,7 +26,13 @@ jobs:
         with:
           aws-region: us-east-1
           role-to-assume: arn:aws:iam::846426922814:role/role-devdays
+
       # CloudFormation Lint
+      - name: Testing with CFN Lint Command
+        uses: scottbrenner/cfn-lint-action@v2
+        with:
+          command: cfn-lint -t ./templates/*.yaml
+          
       # CloudFormation Static Analysis
       # Build docker images
       # Set new image tag
