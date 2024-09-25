@@ -21,6 +21,11 @@ jobs:
 
       # TODO
       # Configure AWS credentials
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: us-east-1
+          role-to-assume: arn:aws:iam::846426922814:role/role-devdays
       # CloudFormation Lint
       # CloudFormation Static Analysis
       # Build docker images
